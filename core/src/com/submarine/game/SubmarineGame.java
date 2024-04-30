@@ -1,31 +1,30 @@
 package com.submarine.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.submarine.game.Entities.Player;
 
 public class SubmarineGame extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
+	Player p1, p2;
 	
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		p1 = new Player(0);
+		p2 = new Player(1);
+		p1.create();
+		p2.create();
 	}
 
 	@Override
 	public void render () {
 		ScreenUtils.clear(1, 0, 0, 1);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
+		p1.render();
+		p2.render();
 	}
 	
 	@Override
 	public void dispose () {
-		batch.dispose();
-		img.dispose();
+		p1.dispose();
+		p2.dispose();
 	}
 }

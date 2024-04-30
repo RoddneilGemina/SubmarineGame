@@ -11,5 +11,7 @@ public class DesktopLauncher {
 		config.setForegroundFPS(60);
 		config.setTitle("SubmarineGame");
 		new Lwjgl3Application(new SubmarineGame(), config);
+
+		//wassap
 	}
 }
